@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { Star, Users, Award, Clock } from 'lucide-react';
+import { Star, User, Award, Clock } from 'lucide-react';
 import { Card, Button } from '@/components/ui';
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ const benefits = [
     description: 'Доступ к эксклюзивным тканям и коллекциям премиум-сегмента',
   },
   {
-    icon: Users,
+    icon: User,
     title: 'Обучение и поддержка',
     description: 'Мастер-классы, консультации и экспертная помощь по текстилю',
   },
