@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button, Card } from '@/components/ui';
 
 export const metadata: Metadata = {
@@ -121,7 +121,7 @@ export default function ProjectsPage() {
                   {/* Content */}
                   <div className="flex-1 flex flex-col">
                     <div className="flex items-center gap-2 text-sm text-neutral-brown mb-3">
-                      <Calendar size={16} />
+                      <span>📅</span>
                       <span>
                         {new Date(project.date).toLocaleDateString('ru-RU', {
                           year: 'numeric',
