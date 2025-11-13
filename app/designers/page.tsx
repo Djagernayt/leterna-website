@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { Check, Star, Users, Award, TrendingUp, Clock, Calculator, HeartHandshake } from 'lucide-react';
+import { Star, Users, Award, Clock } from 'lucide-react';
 import { Card, Button } from '@/components/ui';
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ const benefits = [
     description: 'Выделенный специалист для решения всех вопросов по вашим проектам',
   },
   {
-    icon: Calculator,
+    icon: Star,
     title: 'Специальные цены',
     description: 'До 30% скидка на все услуги и материалы для партнеров',
   },
@@ -37,7 +37,7 @@ const benefits = [
     description: 'Мастер-классы, консультации и экспертная помощь по текстилю',
   },
   {
-    icon: TrendingUp,
+    icon: Star,
     title: 'Бонусная программа',
     description: 'Накопительные бонусы и дополнительные скидки для постоянных партнеров',
   },
@@ -183,8 +183,8 @@ export default function DesignersPage() {
             <ul className="space-y-6">
               {conditions.map((condition, index) => (
                 <li key={index} className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-taupe flex items-center justify-center">
-                    <Check size={18} className="text-white" />
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-taupe flex items-center justify-center text-white text-lg">
+                    ✓
                   </div>
                   <span className="text-lg text-primary-espresso pt-1">
                     {condition}
@@ -232,7 +232,7 @@ export default function DesignersPage() {
       <section className="py-20 md:py-28 lg:py-36 bg-white page-container">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16 md:mb-20">
-            <HeartHandshake size={64} className="mx-auto text-primary-taupe mb-6" />
+            <div className="text-7xl mb-6">🤝</div>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-primary-espresso mb-6">
               Заявка на партнерство
             </h2>
