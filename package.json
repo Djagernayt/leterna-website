@@ -10,7 +10,11 @@
   "dependencies": {
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "next": "16.0.1"
+    "next": "16.0.1",
+    "lucide-react": "^0.460.0",
+    "swiper": "^11.1.15",
+    "react-hook-form": "^7.54.0",
+    "framer-motion": "^11.11.17"
   },
   "devDependencies": {
     "babel-plugin-react-compiler": "1.0.0",
