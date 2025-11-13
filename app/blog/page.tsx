@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
+import { CalendarDays, Clock, ArrowRight, User } from 'lucide-react';
 import { Card } from '@/components/ui';
 
 export const metadata: Metadata = {
@@ -143,7 +143,7 @@ export default function BlogPage() {
                     {/* Meta */}
                     <div className="flex items-center gap-4 text-sm text-neutral-brown mb-3">
                       <div className="flex items-center gap-2">
-                        <Calendar size={16} />
+                        <CalendarDays size={16} />
                         <span>
                           {new Date(post.date).toLocaleDateString('ru-RU', {
                             day: 'numeric',
