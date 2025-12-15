@@ -1,0 +1,199 @@
+{
+  "projects": [
+    {
+      "id": "moscow-city",
+      "slug": "moscow-city",
+      "title": "Moscow City",
+      "client": "Проект Moscow City",
+      "description": "Премиальное оформление панорамных окон в бизнес-центре Moscow City. Современные решения для высотных зданий.",
+      "year": 2024,
+      "rooms": ["living-room", "kitchen", "panoramic-windows"],
+      "products": ["tulle", "curtains-blackout", "roller"],
+      "featured": true,
+      "coverImage": "/images/by-project/moscow-city/normal/001.jpg",
+      "images": {
+        "normal": "/images/by-project/moscow-city/normal",
+        "enhanced": "/images/by-project/moscow-city/enhanced"
+      }
+    },
+    {
+      "id": "belova",
+      "slug": "belova",
+      "title": "Квартира Беловой",
+      "client": "Белова",
+      "description": "Элегантное текстильное оформление частной квартиры. Сочетание римских штор и легкого тюля.",
+      "year": 2024,
+      "rooms": ["living-room", "kitchen", "private-house"],
+      "products": ["tulle", "roman"],
+      "featured": true,
+      "coverImage": "/images/by-project/belova/normal/001.jpg",
+      "images": {
+        "normal": "/images/by-project/belova/normal",
+        "enhanced": "/images/by-project/belova/enhanced"
+      }
+    },
+    {
+      "id": "girko",
+      "slug": "girko",
+      "title": "Резиденция Гирко",
+      "client": "Гирко Константин",
+      "description": "Стильное оформление окон в современной резиденции. Портьеры и блэкаут системы.",
+      "year": 2024,
+      "rooms": ["living-room"],
+      "products": ["tulle", "curtains-blackout"],
+      "featured": false,
+      "coverImage": "/images/by-project/girko/normal/001.jpg",
+      "images": {
+        "normal": "/images/by-project/girko/normal",
+        "enhanced": "/images/by-project/girko/enhanced"
+      }
+    },
+    {
+      "id": "kilinkarov",
+      "slug": "kilinkarov",
+      "title": "Апартаменты Килинкарова",
+      "client": "Килинкаров Леван",
+      "description": "Комплексное решение для квартиры: жалюзи, тюль и портьеры в едином стиле.",
+      "year": 2024,
+      "rooms": ["living-room", "kitchen"],
+      "products": ["tulle", "blinds"],
+      "featured": false,
+      "coverImage": "/images/by-project/kilinkarov/normal/001.jpg",
+      "images": {
+        "normal": "/images/by-project/kilinkarov/normal"
+      }
+    },
+    {
+      "id": "malofeev",
+      "slug": "malofeev",
+      "title": "Квартира Малофеева",
+      "client": "Малофеев Максим",
+      "description": "Полное оформление квартиры: от штор до текстильного декора (подушки, покрывала).",
+      "year": 2024,
+      "rooms": ["bathroom", "living-room", "bedroom"],
+      "products": ["tulle", "curtains-blackout", "pillows"],
+      "featured": true,
+      "coverImage": "/images/by-project/malofeev/normal/001.jpg",
+      "images": {
+        "normal": "/images/by-project/malofeev/normal",
+        "enhanced": "/images/by-project/malofeev/enhanced"
+      }
+    },
+    {
+      "id": "moskin",
+      "slug": "moskin",
+      "title": "Дом Москина",
+      "client": "Москин Антон",
+      "description": "Легкое и воздушное оформление с использованием качественного тюля.",
+      "year": 2024,
+      "rooms": [],
+      "products": ["tulle"],
+      "featured": false,
+      "coverImage": "/images/by-project/moskin/normal/001.jpg",
+      "images": {
+        "normal": "/images/by-project/moskin/normal",
+        "enhanced": "/images/by-project/moskin/enhanced"
+      }
+    },
+    {
+      "id": "toirus",
+      "slug": "toirus",
+      "title": "Офис ООО Тойрус",
+      "client": "ООО Тойрус",
+      "description": "Профессиональное оформление офисного пространства и частного дома.",
+      "year": 2024,
+      "rooms": ["kitchen", "private-house"],
+      "products": ["tulle", "curtains-blackout"],
+      "featured": false,
+      "coverImage": "/images/by-project/toirus/normal/001.jpg",
+      "images": {
+        "normal": "/images/by-project/toirus/normal",
+        "enhanced": "/images/by-project/toirus/enhanced"
+      }
+    },
+    {
+      "id": "transavtokom",
+      "slug": "transavtokom",
+      "title": "Офис ООО Трансавтоком",
+      "client": "ООО Трансавтоком",
+      "description": "Корпоративное оформление санитарных зон в офисе.",
+      "year": 2024,
+      "rooms": ["bathroom"],
+      "products": [],
+      "featured": false,
+      "coverImage": "/images/by-project/transavtokom/normal/001.jpg",
+      "images": {
+        "normal": "/images/by-project/transavtokom/normal",
+        "enhanced": "/images/by-project/transavtokom/enhanced"
+      }
+    },
+    {
+      "id": "pudrikova",
+      "slug": "pudrikova",
+      "title": "Панорамные окна Пудриковой",
+      "client": "Пудрикова",
+      "description": "Оформление панорамных окон с римскими шторами и портьерами.",
+      "year": 2024,
+      "rooms": ["panoramic-windows"],
+      "products": ["tulle", "roman", "curtains-blackout"],
+      "featured": false,
+      "coverImage": "/images/by-project/pudrikova/001.jpg",
+      "images": {
+        "normal": "/images/by-project/pudrikova"
+      }
+    },
+    {
+      "id": "skurskaya",
+      "slug": "skurskaya",
+      "title": "Квартира Скурской",
+      "client": "Скурская",
+      "description": "Комплексное оформление: кабинет, гостиная, спальня с использованием различных систем штор.",
+      "year": 2024,
+      "rooms": ["office", "living-room", "bedroom"],
+      "products": ["tulle", "roman", "curtains-blackout"],
+      "featured": true,
+      "coverImage": "/images/by-project/skurskaya/001.jpg",
+      "images": {
+        "normal": "/images/by-project/skurskaya"
+      }
+    },
+    {
+      "id": "alliance-security",
+      "slug": "alliance-security",
+      "title": "Альянс системы безопасности",
+      "client": "Альянс системы безопасности",
+      "description": "Оформление панорамных окон в корпоративном офисе.",
+      "year": 2024,
+      "rooms": ["panoramic-windows"],
+      "products": ["tulle"],
+      "featured": false,
+      "coverImage": "/images/by-project/alliance-security/normal/001.jpg",
+      "images": {
+        "normal": "/images/by-project/alliance-security/normal",
+        "enhanced": "/images/by-project/alliance-security/enhanced"
+      }
+    }
+  ],
+  "categories": {
+    "rooms": [
+      { "id": "bathroom", "name": "Ванная", "slug": "bathroom" },
+      { "id": "living-room", "name": "Гостиная", "slug": "living-room" },
+      { "id": "winter-garden", "name": "Зимний сад", "slug": "winter-garden" },
+      { "id": "office", "name": "Кабинет", "slug": "office" },
+      { "id": "kitchen", "name": "Кухня", "slug": "kitchen" },
+      { "id": "panoramic-windows", "name": "Панорамные окна", "slug": "panoramic-windows" },
+      { "id": "bedroom", "name": "Спальня", "slug": "bedroom" },
+      { "id": "private-house", "name": "Частный дом", "slug": "private-house" }
+    ],
+    "products": [
+      { "id": "blinds", "name": "Жалюзи", "slug": "blinds", "serviceSlug": null },
+      { "id": "pillows", "name": "Подушки", "slug": "pillows", "serviceSlug": "decor" },
+      { "id": "bedspreads", "name": "Покрывала", "slug": "bedspreads", "serviceSlug": "decor" },
+      { "id": "curtains-blackout", "name": "Портьеры и блэкаут", "slug": "curtains-blackout", "serviceSlug": "curtains" },
+      { "id": "roman", "name": "Римские шторы", "slug": "roman", "serviceSlug": "roman" },
+      { "id": "roller", "name": "Рулонные шторы", "slug": "roller", "serviceSlug": "roller" },
+      { "id": "tulle", "name": "Тюль", "slug": "tulle", "serviceSlug": "tulle" },
+      { "id": "electric-cornices", "name": "Электрокарнизы", "slug": "electric-cornices", "serviceSlug": "cornices" }
+    ]
+  }
+}

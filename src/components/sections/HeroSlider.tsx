@@ -7,6 +7,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const heroSlides = [
   {
+    id: 5,
+    image: '/images/hero/hero-5.png',
+    alt: 'Уютный интерьер с текстильным декором от LETERNA',
+  },
+  {
     id: 1,
     image: '/images/hero/hero-1.jpg',
     alt: 'Элегантные шторы в гостиной с панорамным окном',
@@ -25,7 +30,7 @@ const heroSlides = [
     id: 4,
     image: '/images/hero/hero-4.jpg',
     alt: 'Современная гостиная с минималистичными шторами',
-  },
+  }
 ];
 
 export const HeroSlider: React.FC = () => {
@@ -94,20 +99,12 @@ export const HeroSlider: React.FC = () => {
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-espresso mb-4 md:mb-6 leading-tight drop-shadow-sm">
               LETERNA
             </h1>
-            <p className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-espresso mb-6 md:mb-8 drop-shadow-sm">
+            <p className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-espresso mb-6 md:mb-8 drop-shadow-sm font-light">
               Студия штор и текстильного декора
             </p>
-            <div className="flex flex-wrap gap-4 md:gap-5 mb-10 md:mb-12">
-              <span className="px-8 py-4 bg-white backdrop-blur-md text-primary-espresso rounded-full text-sm md:text-base font-semibold shadow-lg hover:shadow-xl transition-shadow">
-                Стильно
-              </span>
-              <span className="px-8 py-4 bg-white backdrop-blur-md text-primary-espresso rounded-full text-sm md:text-base font-semibold shadow-lg hover:shadow-xl transition-shadow">
-                Премиально
-              </span>
-              <span className="px-8 py-4 bg-white backdrop-blur-md text-primary-espresso rounded-full text-sm md:text-base font-semibold shadow-lg hover:shadow-xl transition-shadow">
-                С любовью
-              </span>
-            </div>
+            <p className="font-heading text-lg sm:text-xl md:text-2xl text-primary-espresso/80 italic mb-10 md:mb-12 drop-shadow-sm">
+              Стильно. Премиально. С Любовью.
+            </p>
             <Button variant="primary" size="large" href="/contacts">
               Заказать консультацию
             </Button>

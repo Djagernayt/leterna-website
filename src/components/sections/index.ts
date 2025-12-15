@@ -1,4 +1,5 @@
 export { HeroSlider } from './HeroSlider';
+export { BenefitsBar } from './BenefitsBar';
 export { AboutSection } from './AboutSection';
 export { StepsSection } from './StepsSection';
 export { PortfolioPreview } from './PortfolioPreview';

@@ -3,45 +3,52 @@ import Image from 'next/image';
 
 export const FounderSection: React.FC = () => {
   return (
-    <section className="py-20 md:py-28 lg:py-36 bg-white page-container">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
-          {/* Фото руководителя */}
-          <div className="flex justify-center md:justify-start">
-            <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80">
-              <Image
-                src="/images/about/portrait-albina.jpg"
-                alt="Руководитель студии Иван Ульянов"
-                fill
-                className="rounded-full object-cover shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
-              />
-            </div>
+    <section className="py-16 md:py-20 lg:py-28 bg-gradient-to-br from-primary-cream via-white to-primary-sand/30">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20 items-center">
+          {/* Левая колонка - Цитата */}
+          <div className="order-2 lg:order-1">
+            <blockquote className="space-y-6 md:space-y-8">
+              <p className="font-body text-base md:text-lg lg:text-xl text-neutral-brown leading-relaxed">
+                "Самая большая благодарность и награда для меня — видеть счастливые лица Клиентов 
+                и слышать восхищённые отзывы об их интерьерах. Приятно осознавать, что наша работа 
+                помогает многим людям создать дом своей мечты.
+              </p>
+              <p className="font-body text-base md:text-lg lg:text-xl text-neutral-brown leading-relaxed">
+                Главное наше преимущество — репутация, о нас рекомендуют. В студии «LETERNA» Вам 
+                будет уделено максимально достаточное количество внимания, выслушаем любые пожелания, 
+                обсудим все возможные варианты, соберём для Вас красивое, функциональное 
+                и технологичное решение!"
+              </p>
+
+              <div className="border-l-2 border-primary-taupe pl-5">
+                <p className="font-heading text-lg md:text-xl font-semibold text-primary-espresso mb-1">
+                  Гадельшина Альбина
+                </p>
+                <p className="font-body text-sm md:text-[15px] text-neutral-brown">
+                  Руководитель студии штор
+                  <br />
+                  и текстильного декора
+                </p>
+              </div>
+
+              <p className="font-heading text-xl md:text-2xl text-primary-taupe italic pt-4">
+                Стильно. Премиально. С Любовью.
+              </p>
+            </blockquote>
           </div>
 
-          {/* Текст */}
-          <div className="space-y-8 md:space-y-10 text-center md:text-left">
-            <div>
-              <p className="text-base sm:text-lg md:text-xl text-neutral-brown italic leading-relaxed">
-                "Самая большая благодарность и награда для меня — видеть счастливые лица Клиентов 
-                и слышать восхищённые отзывы об их интерьерах. Каждый проект для нас — это не просто 
-                работа, а возможность создать что-то по-настоящему особенное, что будет радовать 
-                вас каждый день."
-              </p>
-            </div>
-
-            <div className="border-l-4 border-primary-taupe pl-6">
-              <p className="font-heading text-xl font-semibold text-primary-espresso mb-2">
-                Иван Ульянов
-              </p>
-              <p className="text-neutral-brown">
-                Руководитель студии LETERNA, гений миллиардер плейбой филантроп
-              </p>
-            </div>
-
-            <div className="pt-4">
-              <p className="font-heading text-2xl text-primary-taupe">
-                Стильно. Премиально. С любовью.
-              </p>
+          {/* Правая колонка - Круглое фото интерьера */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[420px] lg:h-[420px]">
+              <Image
+                src="/images/portfolio/project-1.jpg"
+                alt="Интерьер проекта LETERNA"
+                fill
+                className="rounded-full object-cover shadow-[0_8px_40px_rgba(0,0,0,0.12)]"
+              />
+              {/* Декоративное кольцо */}
+              <div className="absolute inset-0 rounded-full border-[3px] border-primary-sand/40 scale-[1.06]" />
             </div>
           </div>
         </div>
@@ -49,18 +56,3 @@ export const FounderSection: React.FC = () => {
     </section>
   );
 };
-
-/* 
-ИЗОБРАЖЕНИЕ ДЛЯ СЕКЦИИ О РУКОВОДИТЕЛЕ:
-Разместить в public/images/about/
-
-portrait-albina.jpg (500x500px минимум, квадратное)
-- Описание: Профессиональное фото руководителя Гадельшиной Альбины
-- Требования: 
-  * Естественное освещение
-  * Нейтральный или размытый фон
-  * Деловой, но приветливый стиль
-  * Качественный портрет крупным планом
-  * Фото будет обрезано в круг
-- Стиль: Профессиональный портрет, премиальный вид
-*/

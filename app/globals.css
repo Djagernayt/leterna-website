@@ -45,7 +45,8 @@
   box-sizing: border-box;
 }
 
-* {
+/* Сброс margin только для блочных элементов, НЕ для всех */
+body, h1, h2, h3, h4, h5, h6, p, blockquote, figure, dl, dd {
   margin: 0;
 }
 

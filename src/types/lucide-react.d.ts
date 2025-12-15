@@ -24,6 +24,8 @@ declare module 'lucide-react' {
   export const Package: Icon;
   export const Scissors: Icon;
   export const Wrench: Icon;
+  export const Ruler: Icon;
+  export const Truck: Icon;
   export const Sparkles: Icon;
   export const Image: Icon;
   export const Award: Icon;

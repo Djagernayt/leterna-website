@@ -1,6 +1,7 @@
 import { Header, Footer } from '@/components/layout';
 import {
   HeroSlider,
+  BenefitsBar,
   AboutSection,
   StepsSection,
   FounderSection,
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSlider />
+        <BenefitsBar />
         <AboutSection />
         <StepsSection />
         <FounderSection />

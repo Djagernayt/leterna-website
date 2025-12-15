@@ -1,8 +1,22 @@
-// Навигационное меню
+// Подменю услуг (dropdown)
+export const SERVICES_SUBMENU = [
+  { label: 'Шторы и портьеры', href: '/services/curtains' },
+  { label: 'Тюль', href: '/services/tulle' },
+  { label: 'Римские шторы', href: '/services/roman' },
+  { label: 'Рулонные шторы', href: '/services/roller' },
+  { label: 'Карнизы', href: '/services/cornices' },
+  { label: 'Солнцезащита', href: '/services/sun-protection' },
+  { label: 'Текстильный декор', href: '/services/decor' },
+];
+
+// Навигационное меню (оптимизированное)
 export const NAVIGATION_MENU = [
-  { label: 'Наши проекты', href: '/projects' },
-  { label: 'Блог', href: '/blog' },
+  { label: 'Услуги', href: '/services', hasDropdown: true },
+  { label: 'О Компании', href: '/#about' },
+  { label: 'Портфолио', href: '/portfolio' },
   { label: 'Дизайнерам', href: '/designers' },
+  { label: 'Контакты', href: '/#contacts' },
+  { label: 'Блог', href: '/blog' },
 ];
 
 // Якорные ссылки для главной страницы (будут на изображениях)

@@ -1,14 +1,10 @@
-import React from 'react';
-import { Metadata } from 'next';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Clock, ArrowRight, User } from 'lucide-react';
-import { Card } from '@/components/ui';
-
-export const metadata: Metadata = {
-  title: 'Блог - LETERNA',
-  description: 'Полезные статьи о выборе штор, трендах в текстильном дизайне, уходе за тканями и оформлении интерьера от экспертов LETERNA.',
-};
+import { Clock, ArrowRight } from 'lucide-react';
+import { Header, Footer } from '@/components/layout';
 
 // Mock данные статей (замените на реальные или подключите CMS)
 const blogPosts = [
@@ -16,7 +12,7 @@ const blogPosts = [
     id: 'kak-vybrat-shtory-dlya-spalni',
     title: 'Как выбрать шторы для спальни: 7 важных критериев',
     excerpt: 'Рассказываем, на что обратить внимание при выборе штор для спальни, чтобы создать уютную и комфортную атмосферу для отдыха.',
-    image: '/images/hero/hero-2.jpg',
+    image: '/images/by-project/belova/normal/001.jpg',
     category: 'Советы',
     author: 'Альбина Гадельшина',
     date: '2024-11-10',
@@ -26,7 +22,7 @@ const blogPosts = [
     id: 'trendy-v-tekstilnom-dizaine-2024',
     title: 'Тренды в текстильном дизайне 2024: что выбрать для дома',
     excerpt: 'Обзор актуальных трендов в мире текстильного дизайна: от цветовых решений до фактур и стилей оформления окон.',
-    image: '/images/hero/hero-1.jpg',
+    image: '/images/by-project/moscow-city/normal/001.jpg',
     category: 'Тренды',
     author: 'Альбина Гадельшина',
     date: '2024-11-05',
@@ -36,7 +32,7 @@ const blogPosts = [
     id: 'uhod-za-premialnym-tekstilem',
     title: 'Уход за премиальным текстилем: как сохранить красоту штор',
     excerpt: 'Правила ухода за дорогими тканями, чистка, стирка и хранение штор, чтобы они служили долгие годы.',
-    image: '/images/portfolio/project-1.jpg',
+    image: '/images/by-project/toirus/normal/001.jpg',
     category: 'Уход',
     author: 'Команда LETERNA',
     date: '2024-10-28',
@@ -46,7 +42,7 @@ const blogPosts = [
     id: 'francuzskie-shtory-v-interiere',
     title: 'Французские шторы в современном интерьере',
     excerpt: 'История, особенности и варианты использования французских штор в разных стилях интерьера.',
-    image: '/images/hero/hero-3.jpg',
+    image: '/images/by-project/malofeev/normal/001.jpg',
     category: 'Стили',
     author: 'Альбина Гадельшина',
     date: '2024-10-20',
@@ -56,7 +52,7 @@ const blogPosts = [
     id: 'kak-vybrat-karnizy',
     title: 'Как выбрать карнизы: практическое руководство',
     excerpt: 'Виды карнизов, материалы, способы крепления и советы по выбору идеального решения для вашего окна.',
-    image: '/images/portfolio/project-3.jpg',
+    image: '/images/by-project/pudrikova/001.jpg',
     category: 'Советы',
     author: 'Команда LETERNA',
     date: '2024-10-12',
@@ -66,7 +62,7 @@ const blogPosts = [
     id: 'shtory-dlya-detskoy',
     title: 'Шторы для детской комнаты: безопасность и красота',
     excerpt: 'Как выбрать шторы для детской, которые будут безопасными, практичными и понравятся вашему ребенку.',
-    image: '/images/portfolio/project-3.jpg',
+    image: '/images/by-project/skurskaya/001.jpg',
     category: 'Детская',
     author: 'Альбина Гадельшина',
     date: '2024-10-05',
@@ -77,137 +73,159 @@ const blogPosts = [
 const categories = ['Все статьи', 'Советы', 'Тренды', 'Уход', 'Стили', 'Детская'];
 
 export default function BlogPage() {
-  return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 md:py-28 bg-primary-cream page-container">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-primary-espresso mb-6">
-            Блог LETERNA
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-brown">
-            Экспертные советы по выбору штор, актуальные тренды и полезные статьи 
-            о текстильном оформлении интерьера от профессионалов
-          </p>
-        </div>
-      </section>
+  const [activeCategory, setActiveCategory] = useState('Все статьи');
 
-      {/* Categories Filter */}
-      <section className="py-8 bg-white border-b border-primary-sand">
-        <div className="page-container">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-wrap gap-3 justify-center">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all ${
-                    category === 'Все статьи'
-                      ? 'bg-primary-taupe text-white'
-                      : 'bg-primary-sand text-primary-espresso hover:bg-primary-rose'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+  // Фильтрация статей по категории
+  const filteredPosts = activeCategory === 'Все статьи' 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === activeCategory);
+
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen">
+        {/* Hero Section */}
+        <section className="py-16 md:py-20 lg:py-24 bg-primary-cream">
+          <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center">
+              <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-espresso mb-4 md:mb-6 text-center">
+                Блог LETERNA
+              </h1>
+              <p className="font-body text-center text-sm md:text-[15px] text-neutral-brown max-w-2xl">
+                Экспертные советы по выбору штор, актуальные тренды и полезные статьи 
+                о текстильном оформлении интерьера
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Blog Posts Grid */}
-      <section className="py-20 md:py-28 lg:py-36 bg-white page-container">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {blogPosts.map((post) => (
-              <Link
-                key={post.id}
-                href={`/blog/${post.id}`}
-                className="group"
-              >
-                <Card hover className="h-full flex flex-col overflow-hidden">
-                  {/* Image */}
-                  <div className="relative h-56 overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute top-4 left-4 bg-primary-taupe text-white px-4 py-2 rounded-full text-sm font-semibold">
-                      {post.category}
+        {/* Categories Filter */}
+        <section className="py-4 md:py-6 bg-white border-b border-primary-sand/50 sticky top-14 md:top-16 lg:top-[80px] z-30">
+          <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
+                {categories.map((category) => {
+                  const categoryCount = category === 'Все статьи' 
+                    ? blogPosts.length 
+                    : blogPosts.filter(p => p.category === category).length;
+                  
+                  return (
+                    <button
+                      key={category}
+                      onClick={() => setActiveCategory(category)}
+                      className={`px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
+                        category === activeCategory
+                          ? 'bg-primary-taupe text-white shadow-md scale-105'
+                          : 'bg-primary-sand text-primary-espresso hover:bg-primary-rose hover:scale-105'
+                      }`}
+                    >
+                      {category} <span className="opacity-70">({categoryCount})</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Posts Grid */}
+        <section className="py-12 md:py-16 lg:py-20 bg-white">
+          <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            {filteredPosts.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-neutral-brown text-lg">Статьи в этой категории скоро появятся</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
+                {filteredPosts.map((post) => (
+                <Link
+                  key={post.id}
+                  href={`/blog/${post.id}`}
+                  className="group"
+                >
+                  <article className="bg-primary-cream rounded-2xl overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
+                    {/* Image */}
+                    <div className="relative h-44 sm:h-48 md:h-52 overflow-hidden">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 left-3 bg-primary-taupe text-white px-3 py-1 rounded-full text-xs font-medium">
+                        {post.category}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="flex-1 flex flex-col">
-                    {/* Meta */}
-                    <div className="flex items-center gap-4 text-sm text-neutral-brown mb-3">
-                      <div className="flex items-center gap-2">
-                        <span>📅</span>
+                    {/* Content */}
+                    <div className="flex-1 flex flex-col p-4 md:p-5">
+                      {/* Meta */}
+                      <div className="flex items-center gap-3 font-body text-xs text-neutral-brown mb-3">
                         <span>
                           {new Date(post.date).toLocaleDateString('ru-RU', {
                             day: 'numeric',
-                            month: 'long',
+                            month: 'short',
                             year: 'numeric',
                           })}
                         </span>
+                        <span className="flex items-center gap-1">
+                          <Clock size={12} />
+                          {post.readTime}
+                        </span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Clock size={16} />
-                        <span>{post.readTime}</span>
-                      </div>
-                    </div>
 
-                    {/* Title */}
-                    <h3 className="font-heading text-xl md:text-2xl font-bold text-primary-espresso mb-3 group-hover:text-primary-taupe transition-colors">
-                      {post.title}
-                    </h3>
+                      {/* Title */}
+                      <h2 className="font-heading text-base md:text-lg font-bold text-primary-espresso mb-2 group-hover:text-primary-taupe transition-colors line-clamp-2">
+                        {post.title}
+                      </h2>
 
-                    {/* Excerpt */}
-                    <p className="text-neutral-brown mb-4 flex-1 leading-relaxed">
-                      {post.excerpt}
-                    </p>
+                      {/* Excerpt */}
+                      <p className="font-body text-xs md:text-sm text-neutral-brown mb-4 flex-1 line-clamp-3">
+                        {post.excerpt}
+                      </p>
 
-                    {/* Author */}
-                    <div className="flex items-center justify-between pt-4 border-t border-primary-sand">
-                      <div className="flex items-center gap-2 text-sm text-neutral-brown">
-                        <User size={16} />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-primary-taupe font-semibold group-hover:gap-3 transition-all">
-                        <span>Читать</span>
-                        <ArrowRight size={18} />
+                      {/* Author & Link */}
+                      <div className="flex items-center justify-between pt-3 border-t border-primary-sand/50">
+                        <span className="font-body text-xs text-neutral-brown">{post.author}</span>
+                        <div className="flex items-center gap-1 text-primary-taupe text-xs font-medium group-hover:gap-2 transition-all">
+                          <span>Читать</span>
+                          <ArrowRight size={14} />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Card>
-              </Link>
-            ))}
+                  </article>
+                </Link>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 md:py-28 bg-primary-sand page-container">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-primary-espresso mb-4">
-            Подпишитесь на рассылку
-          </h2>
-          <p className="text-lg text-neutral-brown mb-8">
-            Получайте новые статьи, советы экспертов и эксклюзивные предложения на почту
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Ваш email"
-              className="flex-1 px-6 py-4 rounded-full border-2 border-primary-taupe focus:outline-none focus:border-primary-espresso"
-            />
-            <button className="px-8 py-4 bg-primary-taupe text-white rounded-full font-semibold hover:opacity-90 transition-opacity">
-              Подписаться
-            </button>
+        {/* Newsletter CTA */}
+        <section className="py-12 md:py-16 lg:py-20 bg-primary-sand">
+          <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full max-w-xl mx-auto flex flex-col items-center">
+              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-primary-espresso mb-3 md:mb-4 text-center">
+                Подпишитесь на рассылку
+              </h2>
+              <p className="font-body text-center text-sm md:text-[15px] text-neutral-brown mb-6">
+                Получайте новые статьи и эксклюзивные предложения
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="Ваш email"
+                  className="flex-1 px-4 md:px-5 py-3 rounded-full border-2 border-primary-taupe focus:outline-none focus:border-primary-espresso text-sm md:text-base"
+                />
+                <button className="px-6 md:px-8 py-3 bg-primary-taupe text-white rounded-full text-sm md:text-base font-medium hover:bg-primary-espresso transition-colors">
+                  Подписаться
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }

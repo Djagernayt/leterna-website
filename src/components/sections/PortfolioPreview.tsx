@@ -1,77 +1,78 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui';
-import { ArrowRight } from 'lucide-react';
 
 const featuredProjects = [
   {
     id: 1,
-    title: 'Гостиная с панорамными окнами',
+    title: 'Название классное',
+    price: '20 000 руб.',
     image: '/images/portfolio/project-1.jpg',
-    slug: 'gostinaya-s-panoramnymi-oknami',
+    slug: 'project-1',
   },
   {
     id: 2,
-    title: 'Спальня в светлых тонах',
+    title: 'Название классное',
+    price: '20 000 руб.',
     image: '/images/portfolio/project-2.jpg',
-    slug: 'spalnya-v-svetlyh-tonah',
+    slug: 'project-2',
   },
   {
     id: 3,
-    title: 'Детская комната с яркими акцентами',
+    title: 'Название классное',
+    price: '20 000 руб.',
     image: '/images/portfolio/project-3.jpg',
-    slug: 'detskaya-komnata-s-yarkimi-akcentami',
+    slug: 'project-3',
   },
   {
     id: 4,
-    title: 'Кабинет в классическом стиле',
+    title: 'Название классное',
+    price: '20 000 руб.',
     image: '/images/portfolio/project-4.jpg',
-    slug: 'kabinet-v-klassicheskom-stile',
+    slug: 'project-4',
   },
 ];
 
 export const PortfolioPreview: React.FC = () => {
   return (
-    <section className="py-20 md:py-28 lg:py-36 bg-primary-cream page-container">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 md:py-20 lg:py-28 bg-white">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Заголовок */}
-        <div className="text-center mb-16 md:mb-20 lg:mb-24">
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-primary-espresso mb-6 md:mb-8">
+        <div className="flex flex-col items-center mb-10 md:mb-14 lg:mb-16">
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-[42px] font-bold text-primary-espresso mb-4 text-center">
             Наши проекты
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-neutral-brown max-w-2xl mx-auto">
+          <p className="text-center text-sm md:text-[15px] text-neutral-brown max-w-xl">
             Вдохновитесь реализованными проектами и представьте, как преобразится ваш интерьер
           </p>
         </div>
 
-        {/* Grid проектов */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mb-12">
+        {/* Grid проектов - 4 в ряд */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 mb-10 md:mb-14">
           {featuredProjects.map((project) => (
             <Link
               key={project.id}
               href={`/projects/${project.slug}`}
-              className="group relative overflow-hidden rounded-[16px] aspect-[3/4] bg-neutral-brown"
+              className="group block"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              {/* Изображение */}
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl mb-3 bg-primary-sand">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
               
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-espresso/80 via-primary-espresso/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              {/* Title */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="font-heading text-xl font-semibold text-white mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {/* Текст под изображением */}
+              <div>
+                <h3 className="font-body text-sm md:text-[15px] text-primary-espresso mb-1 group-hover:text-primary-taupe transition-colors">
                   {project.title}
                 </h3>
-                <div className="flex items-center gap-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                  <span className="text-sm">Смотреть проект</span>
-                  <ArrowRight size={16} />
-                </div>
+                <p className="font-semibold text-sm md:text-[15px] text-primary-espresso">
+                  {project.price}
+                </p>
               </div>
             </Link>
           ))}
@@ -79,9 +80,12 @@ export const PortfolioPreview: React.FC = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <Button variant="primary" size="large" href="/projects">
+          <Link
+            href="/portfolio"
+            className="inline-block px-8 md:px-10 py-3 md:py-3.5 bg-primary-taupe text-white text-sm md:text-[15px] font-medium rounded-full hover:bg-primary-espresso transition-colors"
+          >
             Смотреть все проекты
-          </Button>
+          </Link>
         </div>
       </div>
     </section>
