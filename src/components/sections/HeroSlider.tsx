@@ -105,9 +105,11 @@ export const HeroSlider: React.FC = () => {
             <p className="font-heading text-lg sm:text-xl md:text-2xl text-primary-espresso/80 italic mb-10 md:mb-12 drop-shadow-sm">
               Стильно. Премиально. С Любовью.
             </p>
-            <Button variant="primary" size="large" href="/contacts">
-              Заказать консультацию
-            </Button>
+            <div className="mt-16">
+              <Button variant="primary" size="large" href="/contacts">
+                Заказать консультацию
+              </Button>
+            </div>
           </div>
         </div>
       </div>

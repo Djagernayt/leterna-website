@@ -50,13 +50,13 @@ const steps = [
 export const StepsSection: React.FC = () => {
   return (
     <section id="services" className="py-16 md:py-20 lg:py-28 bg-primary-cream">
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Заголовок */}
         <div className="flex flex-col items-center mb-10 md:mb-14 lg:mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl md:text-[42px] font-bold text-primary-espresso mb-6 md:mb-8 text-center">
             Этапы работы
           </h2>
-          <p className="text-center text-sm md:text-[15px] text-neutral-brown max-w-xl">
+          <p className="text-center text-base md:text-lg text-neutral-brown max-w-xl">
             От первой встречи до финальной установки — мы контролируем каждый шаг, 
             чтобы результат превзошел ваши ожидания.
           </p>
@@ -83,7 +83,7 @@ export const StepsSection: React.FC = () => {
                     <span className="font-heading text-2xl md:text-[28px] font-bold text-primary-sand flex-shrink-0">
                       {String(step.id).padStart(2, '0')}
                     </span>
-                    <p className="font-body text-sm md:text-[15px] text-primary-espresso leading-snug">
+                    <p className="font-body text-base md:text-lg text-primary-espresso leading-snug">
                       {step.title}
                     </p>
                   </div>

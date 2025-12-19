@@ -9,30 +9,27 @@ export const FounderSection: React.FC = () => {
           {/* Левая колонка - Цитата */}
           <div className="order-2 lg:order-1">
             <blockquote className="space-y-6 md:space-y-8">
-              <p className="font-body text-base md:text-lg lg:text-xl text-neutral-brown leading-relaxed">
-                "Самая большая благодарность и награда для меня — видеть счастливые лица Клиентов 
-                и слышать восхищённые отзывы об их интерьерах. Приятно осознавать, что наша работа 
-                помогает многим людям создать дом своей мечты.
+              <p className="font-body text-lg md:text-xl lg:text-2xl text-neutral-brown leading-relaxed">
+                «Самая большая благодарность и награда для меня – видеть счастливые лица Клиентов, 
+                для которых мы создаем авторские проекты по текстильному оформлению, 
+                ведь в каждый интерьер мы вкладываем частичку своей души»
+
               </p>
-              <p className="font-body text-base md:text-lg lg:text-xl text-neutral-brown leading-relaxed">
-                Главное наше преимущество — репутация, о нас рекомендуют. В студии «LETERNA» Вам 
-                будет уделено максимально достаточное количество внимания, выслушаем любые пожелания, 
-                обсудим все возможные варианты, соберём для Вас красивое, функциональное 
-                и технологичное решение!"
+              <p className="font-body text-lg md:text-xl lg:text-2xl text-neutral-brown leading-relaxed">
               </p>
 
               <div className="border-l-2 border-primary-taupe pl-5">
-                <p className="font-heading text-lg md:text-xl font-semibold text-primary-espresso mb-1">
+                <p className="font-heading text-xl md:text-2xl font-semibold text-primary-espresso mb-1">
                   Гадельшина Альбина
                 </p>
-                <p className="font-body text-sm md:text-[15px] text-neutral-brown">
+                <p className="font-body text-base md:text-lg text-neutral-brown">
                   Руководитель студии штор
                   <br />
                   и текстильного декора
                 </p>
               </div>
 
-              <p className="font-heading text-xl md:text-2xl text-primary-taupe italic pt-4">
+              <p className="font-heading text-2xl md:text-3xl text-primary-taupe italic pt-4">
                 Стильно. Премиально. С Любовью.
               </p>
             </blockquote>
@@ -42,7 +39,7 @@ export const FounderSection: React.FC = () => {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[420px] lg:h-[420px]">
               <Image
-                src="/images/portfolio/project-1.jpg"
+                src="/images/portfolio/founder.jpg"
                 alt="Интерьер проекта LETERNA"
                 fill
                 className="rounded-full object-cover shadow-[0_8px_40px_rgba(0,0,0,0.12)]"

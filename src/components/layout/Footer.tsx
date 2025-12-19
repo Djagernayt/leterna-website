@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Phone, Mail, Send } from 'lucide-react';
-import { CONTACTS } from '@/lib/constants';
+import { CONTACTS, COMPANY_DETAILS } from '@/lib/constants';
 import { PDFModal } from '@/components/common/PDFModal';
 
 export const Footer: React.FC = () => {
@@ -166,6 +166,28 @@ export const Footer: React.FC = () => {
                 {CONTACTS.workingHours}
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Company Details Section */}
+      <div className="border-t border-primary-sand/50 bg-primary-cream/30">
+        <div className="w-full max-w-[1440px] mx-auto py-6 px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="grid md:grid-cols-2 gap-4 text-xs text-neutral-brown">
+            <div>
+              <h4 className="font-semibold text-sm text-primary-espresso mb-2">Реквизиты организации</h4>
+              <div className="space-y-1">
+                <p>{COMPANY_DETAILS.legalName}</p>
+                <p>ОГРНИП: {COMPANY_DETAILS.ogrnip}</p>
+                <p>ИНН: {COMPANY_DETAILS.inn}</p>
+                <p>ОКПО: {COMPANY_DETAILS.okpo}</p>
+              </div>
+            </div>
+            <div className="md:text-right">
+              <p className="text-xs text-neutral-brown/70 italic">
+                *Instagram принадлежит компании Meta,<br className="hidden sm:inline" /> признанной экстремистской организацией и запрещенной на территории РФ
+              </p>
+            </div>
           </div>
         </div>
       </div>

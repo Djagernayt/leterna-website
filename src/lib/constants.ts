@@ -11,7 +11,8 @@ export const SERVICES_SUBMENU = [
 
 // Навигационное меню (оптимизированное)
 export const NAVIGATION_MENU = [
-  { label: 'Услуги', href: '/services', hasDropdown: true },
+  { label: 'Виды штор', href: '/services', hasDropdown: true },
+  { label: 'Услуги', href: '/uslugi' },
   { label: 'О Компании', href: '/#about' },
   { label: 'Портфолио', href: '/portfolio' },
   { label: 'Дизайнерам', href: '/designers' },
@@ -34,7 +35,15 @@ export const CONTACTS = {
   telegram: '@leterna_studio',
   whatsapp: '+7XXXXXXXXXX',
   address: '', // Заполнить при наличии
-  workingHours: 'Пн-Пт 10:00-19:00, Сб 11:00-17:00',
+  workingHours: 'Ежедневно с 10:00 до 20:00',
+};
+
+// Реквизиты организации
+export const COMPANY_DETAILS = {
+  legalName: 'ИП Бакина Галина Ильинична',
+  ogrnip: '321774600684152 от 10 ноября 2021 года',
+  inn: '771909344830',
+  okpo: '2011705509',
 };
 
 // Социальные сети
